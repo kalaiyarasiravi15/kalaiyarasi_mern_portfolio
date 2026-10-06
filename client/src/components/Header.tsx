@@ -136,13 +136,15 @@ export default function Header() {
           } else {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
-          window.history.pushState(null, '', to);
+          if (window.location.hash) {
+            window.history.replaceState(null, '', window.location.pathname);
+          }
           setActiveSection(id);
         }
       } else {
-        // Navigating from another page back to home hash
+        // Navigating from another page back to home
         e.preventDefault();
-        navigate(to);
+        navigate('/', { state: { scrollTo: id } });
       }
     }
     setOpen(false);

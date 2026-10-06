@@ -66,11 +66,13 @@ export default function Footer() {
           } else {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
-          window.history.pushState(null, '', link.to);
+          if (window.location.hash) {
+            window.history.replaceState(null, '', window.location.pathname);
+          }
         }
       } else {
         e.preventDefault();
-        navigate(link.to);
+        navigate('/', { state: { scrollTo: link.targetId } });
       }
     }
   };

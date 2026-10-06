@@ -15,12 +15,21 @@ let pool: mysql.Pool | null = null;
 
 async function getPool(): Promise<mysql.Pool> {
   if (!pool) {
-    pool = mysql.createPool({
-      ...config,
-      database,
-      connectionLimit: 3,
-      waitForConnections: true,
-    });
+    if (process.env.DATABASE_URL) {
+      pool = mysql.createPool({
+        uri: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false },
+        connectionLimit: 3,
+        waitForConnections: true,
+      });
+    } else {
+      pool = mysql.createPool({
+        ...config,
+        database,
+        connectionLimit: 3,
+        waitForConnections: true,
+      });
+    }
 
     // Auto-create table if not exists
     await pool.query(`

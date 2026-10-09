@@ -19,7 +19,7 @@ export const profile = {
    * Leave empty to fall back to the illustrated placeholder.
    */
   photo: '/images/profile_pic.png',
-  resume: '/Kalaiyarasi_MERN_Resume_ATS_new.pdf',
+  resume: '/Kalaiyarasi_MERN_Resume_ATS.pdf',
   aboutHeadline:
     'I build responsive, real-world web applications, from database design to polished UI.',
   summary:

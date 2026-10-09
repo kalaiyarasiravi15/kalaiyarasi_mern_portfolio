@@ -13,7 +13,7 @@ import SectionTag from '../components/SectionTag';
 import { Container, gutters } from '../components/Section';
 
 export default function ResumeSection() {
-  const resumeUrl = profile.resume || '/Kalaiyarasi_MERN_Resume_ATS_new.pdf';
+  const resumeUrl = profile.resume || '/Kalaiyarasi_MERN_Resume_ATS.pdf';
 
   return (
     <Box

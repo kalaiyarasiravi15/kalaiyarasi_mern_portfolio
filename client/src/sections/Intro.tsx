@@ -341,7 +341,7 @@ export default function Intro() {
                 <PrimaryButton label="Get In Touch" to="/contact-us" />
                 <PrimaryButton
                   label="Download Resume"
-                  href={profile.resume || '/Kalaiyarasi_MERN_Resume_ATS_new.pdf'}
+                  href={profile.resume || '/Kalaiyarasi_MERN_Resume_ATS.pdf'}
                   tone="light"
                 />
               </Reveal>
